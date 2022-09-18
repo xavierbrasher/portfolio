@@ -1,3 +1,7 @@
 export default function Portfolio() {
-    return <></>;
+    return (
+        <>
+            <h1></h1>
+        </>
+    );
 }

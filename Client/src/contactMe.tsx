@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 export default function ContactMe() {
     let formRef = useRef(HTMLFormElement);
     let [empty, setEmpty] = useState(false);
+    let [responce, setResponce] = useState("");
+    let [showToast, setShowToast] = useState(false);
 
     useEffect(() => {
         document.title = "Contact Me";
@@ -25,6 +27,8 @@ export default function ContactMe() {
             setEmpty(true);
             return;
         }
+        setResponce("Sent Succesfully");
+        setShowToast(true);
         // const api = await fetch(
         //     "/api/sendmessage?" +
         //         new URLSearchParams({
@@ -90,6 +94,15 @@ export default function ContactMe() {
                     Clear
                 </button>
             </form>
+            {showToast && (
+                <div className="mb-14 toast">
+                    <div className="alert alert-info">
+                        <div>
+                            <span>{responce}</span>
+                        </div>
+                    </div>
+                </div>
+            )}
         </>
     );
 }

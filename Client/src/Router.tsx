@@ -8,19 +8,21 @@ import Portfolio from "./portfolio";
 
 export default function Router() {
     return (
-        <BrowserRouter>
-            <div className="xl:mb-4 mb-16">
-                <NavBar />
-                <div className="xl:mx-80 mx-4 mt-6">
-                    <Routes>
-                        <Route path="/" element={<App />} />
-                        <Route path="/contactme" element={<ContactMe />} />
-                        <Route path="/portfolio" element={<Portfolio />} />
-                        <Route path="*" element={<NotFound />} />
-                    </Routes>
+        <>
+            <BrowserRouter>
+                <div className="xl:mb-4 mb-16">
+                    <NavBar />
+                    <div className="xl:mx-80 mx-4 mt-6">
+                        <Routes>
+                            <Route path="/" element={<App />} />
+                            <Route path="/contactme" element={<ContactMe />} />
+                            <Route path="/portfolio" element={<Portfolio />} />
+                            <Route path="*" element={<NotFound />} />
+                        </Routes>
+                    </div>
                 </div>
-            </div>
-            <Footer />
-        </BrowserRouter>
+                <Footer />
+            </BrowserRouter>
+        </>
     );
 }
