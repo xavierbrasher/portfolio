@@ -4,7 +4,10 @@ import Footer from "./components/footer";
 import NavBar from "./components/navbar";
 import ContactMe from "./contactMe";
 import NotFound from "./notFound";
-import Portfolio from "./portfolio";
+import DiscordJS from "./portfolio/discordjs";
+import NameAndAge from "./portfolio/name-and-age";
+import Portfolio from "./portfolio/portfolio";
+import StickItIn from "./portfolio/stick-it-in";
 
 export default function Router() {
     return (
@@ -16,7 +19,21 @@ export default function Router() {
                         <Routes>
                             <Route path="/" element={<App />} />
                             <Route path="/contactme" element={<ContactMe />} />
+
                             <Route path="/portfolio" element={<Portfolio />} />
+                            <Route
+                                path="/portfolio/stick-it-in"
+                                element={<StickItIn />}
+                            />
+                            <Route
+                                path="/portfolio/discordbot"
+                                element={<DiscordJS />}
+                            />
+                            <Route
+                                path="/portfolio/name-and-age"
+                                element={<NameAndAge />}
+                            />
+
                             <Route path="*" element={<NotFound />} />
                         </Routes>
                     </div>

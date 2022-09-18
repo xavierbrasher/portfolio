@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface PortfolioCardProps {
     title: string;
     content: string;
@@ -14,16 +16,16 @@ export default function PortfolioCard({
     siteUrl,
 }: PortfolioCardProps) {
     return (
-        <>
-            <div className="card card-side bg-base-100 shadow-xl">
-                <figure>
-                    <img src={img} alt={imgAlt} />
+        <a href={siteUrl}>
+            <div className="card card-side bg-base-300 shadow-xl mt-4">
+                <figure className="ml-4">
+                    <img width={100} height={100} src={img} alt={imgAlt} />
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title">{title}</h2>
                     <p>{content}</p>
                 </div>
             </div>
-        </>
+        </a>
     );
 }
