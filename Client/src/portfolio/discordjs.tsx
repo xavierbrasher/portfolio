@@ -1,7 +1,7 @@
 export default function DiscordJS() {
     return (
         <div className="text-xl mb-14">
-            <img alt="Discord Bot Logo" src={"/discordjs.png"} />
+            <img alt="Discord Bot Logo" src={"/img/discordjs.png"} />
             <h1 className="text-5xl font-bold mb-4">
                 Very Special - Discord Bot
             </h1>

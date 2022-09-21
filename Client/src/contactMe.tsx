@@ -27,19 +27,22 @@ export default function ContactMe() {
             setEmpty(true);
             return;
         }
-        const api = await fetch(
-            "/api/sendmessage?" +
-                new URLSearchParams({
-                    name: name,
-                    email: email,
-                    content: content,
-                    apikey: "thisisnothiddenatall",
-                })
-        );
-        const { responce } = await api.json();
-        if (responce == 0) {
+        const api = await fetch("/api/push", {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                content: content,
+            }),
+        });
+        const { internal_push_status } = await api.json();
+        if (internal_push_status == 1) {
             setResponce("Sent Succesfully");
             setShowToast(true);
+            clear(e);
         } else {
             setResponce("Failed to Send");
             setShowToast(true);

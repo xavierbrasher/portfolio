@@ -6,7 +6,7 @@ import ContactMe from "./contactMe";
 import NotFound from "./notFound";
 import DiscordJS from "./portfolio/discordjs";
 import NameAndAge from "./portfolio/name-and-age";
-import Portfolio from "./portfolio/portfolio";
+import Portfolio from "./portfolio/index";
 import StickItIn from "./portfolio/stick-it-in";
 
 export default function Router() {

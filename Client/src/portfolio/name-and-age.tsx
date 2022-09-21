@@ -1,7 +1,7 @@
 export default function NameAndAge() {
     return (
         <div className="text-xl">
-            <img alt="Github Logo" src="/githubLogo.png" />
+            <img alt="Github Logo" src="/img/githubLogo.png" />
             <h1 className="font-bold text-5xl mb-4">Name and Age rememberer</h1>
             <p className="mb-4">
                 Name and Age Remember is a project that I do everytime I learn a
