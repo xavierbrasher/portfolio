@@ -4,6 +4,7 @@ dotenv.config();
 import express from "express";
 import sendPush from "./lib/sendPush";
 import cors from "cors";
+import path from "path";
 
 const port = 80;
 const app = express();
@@ -11,10 +12,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(__dirname + "/public/"));
+app.use(express.static(path.resolve("public/")));
 
 app.get("*", (req, res) => {
-    res.sendFile(__dirname + "/public/" + "index.html");
+    res.sendFile(path.resolve("public/index.html"));
+});
+
+app.get("/robots.txt", (_req, res) => {
+    res.sendFile(path.resolve("public/robots.txt"));
 });
 
 app.post("/api/push", async (req, res) => {
