@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import PortfolioCard from "../components/portfolio_card";
 
 export default function Portfolio() {
+    useEffect(() => {
+        document.title = "Portfolio";
+    }, []);
     return (
         <>
             <h1 className="text-5xl font-bold">Portfolio</h1>

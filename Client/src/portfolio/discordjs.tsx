@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 export default function DiscordJS() {
+    useEffect(() => {
+        document.title = "Discord Bot";
+    }, []);
     return (
         <div className="text-xl mb-14">
             <img alt="Discord Bot Logo" src={"/img/discordjs.png"} />

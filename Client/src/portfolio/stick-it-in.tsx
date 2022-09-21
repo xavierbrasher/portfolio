@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 export default function StickItIn() {
+    useEffect(() => {
+        document.title = "Stick It In";
+    }, []);
     return (
         <div className="text-xl mb-14">
             <img alt="Stick It In Logo" src={"/img/stick-it-in.png"} />

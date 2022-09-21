@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 export default function NameAndAge() {
+    useEffect(() => {
+        document.title = "Name and Age";
+    }, []);
     return (
         <div className="text-xl">
             <img alt="Github Logo" src="/img/githubLogo.png" />
