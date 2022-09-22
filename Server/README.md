@@ -2,6 +2,10 @@
 
 Server section of Site
 
+# Config
+
+Create public folder and put index.html in there
+
 # Enviroment Variables
 
 ```
