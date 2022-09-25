@@ -1,6 +1,6 @@
 export default function Projects() {
     return (
-        <div className="mb-4">
+        <div className="xl:mb-4 mb-8">
             <h1 className="text-4xl font-bold mb-3">Projects: </h1>
             <p className="text-xl">
                 <p className="font-bold inline">Stick It In: </p>A fun and

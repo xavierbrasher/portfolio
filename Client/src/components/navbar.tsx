@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 export default function NavBar() {
     return (
         <div className="navbar bg-base-300">
-            <div className="flex-1 ml-3">
-                <Link to={"/"} className="btn btn-ghost normal-case text-xl">
+            <div className="flex-1 xl:ml-3">
+                <Link
+                    to={"/"}
+                    className="btn btn-ghost normal-case  xl:text-xl font-bold text-base"
+                >
                     Xavier Brasher
                 </Link>
             </div>
