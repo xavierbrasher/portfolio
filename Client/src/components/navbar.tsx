@@ -6,7 +6,7 @@ export default function NavBar() {
             <div className="flex-1 xl:ml-3">
                 <Link
                     to={"/"}
-                    className="btn btn-ghost normal-case  xl:text-xl font-bold text-base"
+                    className="btn btn-ghost normal-case  xl:text-xl text-base"
                 >
                     Xavier Brasher
                 </Link>
