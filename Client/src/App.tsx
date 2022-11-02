@@ -9,17 +9,19 @@ function App() {
     }, []);
 
     return (
-        <div>
+        <main>
             <h1 className="md:text-5xl text-4xl font-bold mb-6">
                 Hello, I'm Xavier 👋
             </h1>
             <p className="text-2xl mb-4">
                 I am a 15 year old student who is godly at coding.
             </p>
-            <About_Me />
-            <Languages />
-            <Projects />
-        </div>
+            <div className="lg:grid lg:gap-4 lg:grid-cols-3 grid-cols-1">
+                <About_Me />
+                <Languages />
+                <Projects />
+            </div>
+        </main>
     );
 }
 

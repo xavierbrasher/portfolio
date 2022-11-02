@@ -6,7 +6,8 @@ export default function About_Me() {
                 I am a Y11 student that is godly at programming. I starting
                 teaching myself when I was 7 and slowly got better and better
                 over the years. I hate doing HTML and CSS, which is why I use
-                tailwind and react to write everything for me
+                Tailwind and React to write everything for me. I really enjoy
+                coding and thats why I still continue to do it to this day.
             </p>
         </div>
     );

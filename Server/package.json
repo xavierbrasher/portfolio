@@ -4,9 +4,11 @@
     "main": "index.ts",
     "license": "MIT",
     "dependencies": {
+        "@types/memory-cache": "^0.2.2",
         "cors": "^2.8.5",
         "dotenv": "^16.0.2",
         "express": "^4.18.1",
+        "memory-cache": "^0.2.0",
         "node-fetch": "^3.2.10"
     },
     "devDependencies": {
@@ -17,8 +19,8 @@
         "typescript": "^4.8.3"
     },
     "scripts": {
-		"start": "node ./output/production/index.js",
-		"build": "tsc --outdir ./output/production/",
+        "start": "node ./output/production/index.js",
+        "build": "tsc --outdir ./output/production/",
         "dev": "tsc --outdir ./output/dev/ && node ./output/dev/index.js"
     }
 }

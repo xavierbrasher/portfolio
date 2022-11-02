@@ -15,7 +15,7 @@ export default function Router() {
             <BrowserRouter>
                 <div className="xl:mb-4 mb-16">
                     <NavBar />
-                    <div className="xl:mx-80 mx-4 mt-6">
+                    <div className="2xl:mx-80 xl:mx-60 lg:mx-40 mx-4 mt-6">
                         <Routes>
                             <Route path="/" element={<App />} />
                             <Route path="/contactme" element={<ContactMe />} />

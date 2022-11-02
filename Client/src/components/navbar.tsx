@@ -14,7 +14,7 @@ export default function NavBar() {
             <div className="flex-none mr-3">
                 <ul className="menu menu-horizontal p-0">
                     <li>
-                        <Link to={"/portfolio"}>Portfolio</Link>
+                        <Link to={"/portfolio"}></Link>
                     </li>
                     <li className="ml-2">
                         <Link to={"/contactme"}>Contact Me</Link>

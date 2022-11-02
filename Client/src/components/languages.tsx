@@ -17,6 +17,12 @@ export default function Languages() {
                 <p className="font-bold inline">What I'm keeping my eye on: </p>
                 Go, Kotlin, Java
             </p>
+            <p className="text-xl">
+                <p className="font-bold inline">
+                    What I'm interested in working on:
+                </p>{" "}
+                Frontend, Backend, Game design, Development in Rust
+            </p>
         </div>
     );
 }
