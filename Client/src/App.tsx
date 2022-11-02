@@ -16,7 +16,7 @@ function App() {
             <p className="text-2xl mb-4">
                 I am a 15 year old student who is godly at coding.
             </p>
-            <div className="lg:grid lg:gap-4 lg:grid-cols-3 grid-cols-1">
+            <div className="">
                 <About_Me />
                 <Languages />
                 <Projects />
