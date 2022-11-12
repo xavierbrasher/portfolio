@@ -3,45 +3,51 @@
 @tailwind utilities;
 
 .border-normal {
-    border-color: rgb(176, 173, 255);
+  border-color: rgb(176, 173, 255);
 }
 
 @keyframes animations {
-    0% {
-        visibility: hidden;
-        left: -100vmax;
-    }
-    1% {
-        visibility: visible;
-    }
-    70% {
-        left: 0px;
-    }
-    100% {
-        visibility: visible;
-        left: 0px;
-    }
+  0% {
+    visibility: hidden;
+    left: -100vmax;
+    height: 100%;
+    filter: blur(50px);
+  }
+  1% {
+    visibility: visible;
+  }
+  10% {
+    filter: blur(25px);
+  }
+  70% {
+    left: 0px;
+  }
+  100% {
+    visibility: visible;
+    left: 0px;
+    filter: none;
+  }
 }
 
 .firstAni {
-    left: -100vmax;
-    position: relative;
-    animation: animations 500ms ease;
-    animation-fill-mode: forwards;
+  left: -100vmax;
+  position: relative;
+  animation: animations 500ms ease;
+  animation-fill-mode: forwards;
 }
 
 .secondAni {
-    left: -100vmax;
-    position: relative;
-    animation: animations 500ms ease;
-    animation-delay: 500ms;
-    animation-fill-mode: forwards;
+  left: -100vmax;
+  position: relative;
+  animation: animations 500ms ease;
+  animation-delay: 500ms;
+  animation-fill-mode: forwards;
 }
 
 .thirdAni {
-    left: -100vmax;
-    position: relative;
-    animation: animations 500ms ease;
-    animation-delay: 1000ms;
-    animation-fill-mode: forwards;
+  left: -100vmax;
+  position: relative;
+  animation: animations 500ms ease;
+  animation-delay: 1000ms;
+  animation-fill-mode: forwards;
 }
