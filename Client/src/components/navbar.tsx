@@ -43,12 +43,6 @@ export default function NavBar() {
 
     return (
         <div className="navbar bg-base-300">
-            <head>
-                <link
-                    rel="stylesheet"
-                    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-                />
-            </head>
             <div className="flex-1 xl:ml-3">
                 <Link
                     to={"/"}

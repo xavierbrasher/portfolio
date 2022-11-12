@@ -1,9 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import About_Me from "./components/about_me";
 import Languages from "./components/languages";
 import Projects from "./components/projects";
 
-function App() {
+export default function App() {
+    const firstAni = useRef<HTMLDivElement>(null);
+    const secondAni = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
         document.title = "Home";
     }, []);
@@ -16,13 +19,17 @@ function App() {
             <p className="text-2xl mb-4">
                 I am a 15 year old student who is godly at coding.
             </p>
-            <div className="">
-                <About_Me />
-                <Languages />
-                <Projects />
+            <div>
+                <div ref={firstAni} className="firstAni">
+                    <About_Me />
+                </div>
+                <div className="secondAni">
+                    <Languages />
+                </div>
+                <div className="thirdAni">
+                    <Projects />
+                </div>
             </div>
         </main>
     );
 }
-
-export default App;
