@@ -1,10 +1,4 @@
 export default function About_Me() {
-  function ageCalculation() {
-    const bdate = new Date(this.dob);
-    const timeDiff = Math.abs(Date.now() - bdate.getTime());
-    this.age = Math.floor(timeDiff / (1000 * 3600 * 24) / 365);
-  }
-
   return (
     <div className="mb-4" id="about_me">
       <h1 className="text-4xl font-bold mb-3">About Me</h1>
