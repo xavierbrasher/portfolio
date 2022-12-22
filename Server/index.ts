@@ -15,26 +15,26 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.resolve("public/"), { maxAge: "30d" }));
 
 app.get("*", (req, res) => {
-    res.sendFile(path.resolve("public/index.html"));
+  res.sendFile(path.resolve("public/index.html"));
 });
 
 app.get("/robots.txt", (_req, res) => {
-    res.sendFile(path.resolve("public/robots.txt"));
+  res.sendFile(path.resolve("public/robots.txt"));
 });
 
 app.post("/api/push", async (req, res) => {
-    const { name, email, content } = req.body;
-    if (name === undefined || email === undefined || content === undefined) {
-        res.status(400).json({ responce: 0, error: "Not enough paramaters" });
-        return;
-    }
-    res.status(200).send({
-        push_status: "sent",
-        internal_push_status: await sendPush(name, email, content),
-    });
+  const { name, email, content } = req.body;
+  if (name === undefined || email === undefined || content === undefined) {
+    res.status(400).json({ responce: 0, error: "Not enough paramaters" });
+    return;
+  }
+  res.status(200).send({
+    push_status: "sent",
+    internal_push_status: await sendPush(name, email, content),
+  });
 });
 
 // Starts server
 app.listen(port, () => {
-    console.log("Portfolio is listening on port: " + port);
+  console.log("Portfolio is listening on port: " + port);
 });
