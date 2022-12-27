@@ -1,4 +1,4 @@
-name: server-rust-test
+name: Rust Server Test
 
 on:
   push:
