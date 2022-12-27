@@ -1,5 +1,5 @@
 use actix_web::{post, web, App, HttpResponse, HttpServer, Responder};
-use std::{fs, io::Error};
+use std::fs;
 use actix_files::Files; 
 use serde::{Deserialize, Serialize};
 use serde_json;
@@ -9,14 +9,6 @@ use reqwest;
 
 const PORT: u32 = 8080;
 
-struct Notification {
-  token: String,
-  user: String,
-  message: String,
-  title: String,
-  url: String,
-  responce: Option<reqwest::Response>
-}
 #[derive(Deserialize)]
 struct PushoverResponce {
   status: i32
@@ -54,21 +46,20 @@ struct PushResponce {
 
 #[post("/api/push")]
 async fn push(form_data: web::Json<FormData>) -> impl Responder {
-  let message = format!("Name: {} \nEmail: {} \nContent: \n{}", form_data.name, form_data.email, form_data.content);
+  let message: String = format!("Name: {} \nEmail: {} \nContent: \n{}", form_data.name, form_data.email, form_data.content);
 
-  let result = send_message(message).await;
-  let mut status = String::new();
-  if result == 1 {
-    status = "Sent the Message".to_string();
-  } else {
-    status = "Failed to send".to_string();
-  }
-
-  let obj = PushResponce {
-    push_status: status,
+  let result: i32 = send_message(message).await;
+  let mut obj: PushResponce = PushResponce {
+    push_status: String::new(),
     internal_push_status: result
   };
-  let response = serde_json::to_string(&obj).unwrap();
+  if result == 1 {
+    obj.push_status = "Sent the Message".to_string();
+  } else {
+    obj.push_status = "Failed to send".to_string();
+  }
+
+  let response: String = serde_json::to_string(&obj).unwrap();
   HttpResponse::Ok()
     .content_type("application/json")
     .body(response)
@@ -76,7 +67,7 @@ async fn push(form_data: web::Json<FormData>) -> impl Responder {
 
 async fn single_page_app() -> impl Responder{
 
-  let file_contents = fs::read_to_string("./public/index.html").expect("Fail to read index.html");
+  let file_contents: String = fs::read_to_string("./public/index.html").expect("Fail to read index.html");
 
   HttpResponse::Ok()
   .content_type("text/html")
@@ -98,7 +89,8 @@ async fn main() -> std::io::Result<()> {
       .route("/contactme", web::get().to(single_page_app))
       .service(push)
       .service(Files::new("/", "./public"))
-}).workers(8)
+      .default_service(web::to(single_page_app))
+}).workers(16)
   .bind(format!("127.0.0.1:{:?}", PORT))
   .expect("Failed to bind")
   .run()
